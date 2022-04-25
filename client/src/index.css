@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&family=Poppins:wght@200&family=Roboto:wght@300;400&display=swap');
+
+:root{
+  --open-sans:'Open Sans', sans-serif;
+  --poppins: 'Poppins', sans-serif;
+  --roboto:'Roboto', sans-serif;
+  --background-color:#ffffff;
+  --text-color:#000000c9;
+  --watermelon: #ff4f87;
+  --light-watermelon: #ff4f8796;
+  --faint-border:#bbbbbbb6;
+}
+
+body{
+  max-width: 1440px;
+  background-color: #ffffff;
+  color: #000000c9;
+  font-family: var(--open-sans);
+  display: grid;
+}

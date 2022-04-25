@@ -1,0 +1,40 @@
+.page_container{
+    width:90%;
+    margin:50px auto;
+}
+
+.grid_container{
+    display: grid;
+    width:100%;
+    margin:10px auto;
+    grid-gap:30px;
+    padding:20px;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    grid-auto-rows: auto;
+    justify-items: center;
+}
+.btn_container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+.btn_container button{
+    font-family: Arial, Helvetica, sans-serif;
+    padding:5px 10px;
+    background: none;
+    outline: none;
+    border:0.5px solid var(--watermelon);
+    border-radius: 4px;
+    cursor:pointer;
+    color:var(--watermelon);
+    transition: .3s;
+    font-size:.9rem;
+}
+.btn_container button:hover{
+    background:var(--watermelon);
+    color:white;
+}
+.btn_container button:active{
+    transform:scale(.95);
+}

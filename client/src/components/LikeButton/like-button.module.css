@@ -1,0 +1,9 @@
+.like_button{
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+}
+
+.like_button:hover{
+    transform: scale(1.05)
+}

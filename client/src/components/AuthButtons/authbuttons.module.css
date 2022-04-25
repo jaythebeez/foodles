@@ -1,0 +1,24 @@
+
+.auth_button{
+    padding:8px 15px;
+    font-size:.9rem;
+    font-weight:400;
+    background-image:linear-gradient(to right,rgb(83, 126, 155), rgb(41, 104, 129));
+    border-radius: 30px;
+    border: none;
+    cursor:pointer;
+    color:white;
+    transition:.3s;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%),
+    0 3px 1px -2px rgb(0 0 0 / 12%),
+    0 1px 5px 0 #00000033;
+}
+.auth_button:hover{
+    transform:scale(1.05);
+}
+.auth_button:active{
+    transform:scale(.95);
+}
+.liked_link:hover{
+    text-decoration: underline;
+}
