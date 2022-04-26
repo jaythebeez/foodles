@@ -13,7 +13,8 @@ import LogIn from "../../components/AuthModals/Login";
 import SignUp from "../../components/AuthModals/Signup";
 
 const SearchResultsPage = ({handleAuthModal, authModal}) => {
-    const api = 'apiKey=c41f29241c9c4c45aadf926791fc4a07';
+    const apiKey = process.env.REACT_APP_SPOONACULAR_API;
+    const api = `apiKey=${apiKey}`;
     const { query: routerQuery } = useParams();// get query from url
     const resultsDisplayed = 15; // number of results to display on page
     const [page, setPage] = useState(1);// page of results displayed

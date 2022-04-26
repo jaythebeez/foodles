@@ -53,6 +53,12 @@
     border:0.5px dashed rgba(0, 0, 0, 0.473);
 
 }
+.modal_header p a{
+    color:blue;
+}
+.modal_header p a:hover{
+    text-decoration: underline;
+}
 .modal_buttons{
     width:100%;
     display:flex;

@@ -12,7 +12,8 @@ import {  useNavigate  } from 'react-router-dom'
 
 
 const LikedResultsPage = () => {
-    const api = 'apiKey=c41f29241c9c4c45aadf926791fc4a07'; 
+    const apiKey = process.env.REACT_APP_SPOONACULAR_API;
+    const api = `apiKey=${apiKey}`;
     const [userData, setUserData] = useState({docId: null, likedRecipes:[]});
     const {data, isPending, error} = useFetch(`https://api.spoonacular.com/recipes/informationBulk?ids=${userData.likedRecipes.join(',')}&${api}`);
     const [modal, setModal] = useState({isOpen:false});

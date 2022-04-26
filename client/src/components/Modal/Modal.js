@@ -6,7 +6,8 @@ import Loader from '../Loader';
 
 
 const Modal = ({closeModal, id, userData}) => {
-    const key = 'apiKey=c41f29241c9c4c45aadf926791fc4a07';
+    const apiKey = process.env.REACT_APP_SPOONACULAR_API;
+    const key = `apiKey=${apiKey}`;
     const {data, isPending} = useFetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&${key}`);
     const [results, setResults] = useState(null);
     
