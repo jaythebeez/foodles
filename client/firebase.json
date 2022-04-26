@@ -6,7 +6,7 @@
     "template": "firebase.json"
   },
   "hosting": {
-    "public": "public",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
