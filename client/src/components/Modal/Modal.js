@@ -3,12 +3,13 @@ import LikeButton from '../LikeButton/LikeButton';
 import useFetch from '../../customHooks/useFetch';
 import styles from './modal.module.css';
 import Loader from '../Loader';
+import { toast } from 'react-toastify';
 
 
 const Modal = ({closeModal, id, userData}) => {
     const apiKey = process.env.REACT_APP_SPOONACULAR_API;
     const key = `apiKey=${apiKey}`;
-    const {data, isPending} = useFetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&${key}`);
+    const {data, isPending, error} = useFetch(`https://api.spoonacular.com/recipes/${id}/information?includeNutrition=false&${key}`);
     const [results, setResults] = useState(null);
     
 
@@ -28,6 +29,16 @@ const Modal = ({closeModal, id, userData}) => {
     const handleClick = (event) => {
         event.stopPropagation();
     }
+
+    useEffect(()=>{
+        if (error){
+            toast("Error loading Recipe, please try again");
+            console.log(error)
+            setTimeout(()=>{
+                window.location.reload();
+            }, 2000)
+        }
+    },[error])
 
     return ( 
         <>

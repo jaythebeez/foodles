@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { login } from "../../contexts/firebase/auth";
 import { UserContext } from "../../contexts/UserContext";
 import styles from './authpage.module.css';
+import {  toast  } from 'react-toastify';
 
 const LogIn = ({handleAuthModal}) => {
 
@@ -17,7 +18,12 @@ const LogIn = ({handleAuthModal}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await login(email, password); 
+        try{
+            await login(email, password); 
+        }
+        catch (e) {
+            toast("Failed to log in, please try again")
+        }
     }
     return ( 
         <div className={styles.modal_container} onClick={()=>handleAuthModal('close')}>

@@ -2,8 +2,29 @@
     cursor:pointer;
     display: flex;
     align-items: center;
+    gap:2px;
 }
 
-.like_button:hover{
+.like_count{
+    font-size: .9rem;
+    z-index:-1;
+}
+
+.like_icon{
+    display: flex;
+}
+.like_icon:hover{
     transform: scale(1.05)
+}
+
+@keyframes turntile {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px)
+    }
 }

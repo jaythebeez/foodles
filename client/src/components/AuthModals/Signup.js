@@ -1,5 +1,6 @@
 import { signup } from "../../contexts/firebase/auth";
 import { useState } from "react";
+import {toast} from 'react-toastify';
 
 import styles from './authpage.module.css';
 
@@ -10,8 +11,13 @@ const SignUp = ({handleAuthModal}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await signup(email, password);
-        handleAuthModal('login');
+        try{
+            await signup(email, password);
+            handleAuthModal('login');
+        }
+        catch (e) {
+            toast("Failed to sign up, please try again");
+        }
     }
 
     return ( 
