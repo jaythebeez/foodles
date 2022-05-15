@@ -1,10 +1,10 @@
 import { signup } from "../../contexts/firebase/auth";
 import { useState } from "react";
 import {toast} from 'react-toastify';
-
 import styles from './authpage.module.css';
+import { openModal } from "./AuthContainer";
 
-const SignUp = ({handleAuthModal}) => {
+const SignUp = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -13,7 +13,7 @@ const SignUp = ({handleAuthModal}) => {
         e.preventDefault();
         try{
             await signup(email, password);
-            handleAuthModal('login');
+            openModal('login');
         }
         catch (e) {
             toast("Failed to sign up, please try again");
@@ -21,7 +21,7 @@ const SignUp = ({handleAuthModal}) => {
     }
 
     return ( 
-        <div className={styles.modal_container} onClick={()=>handleAuthModal('close')}>
+        <div className={styles.modal_container} onClick={()=>openModal('closed')}>
             <div className={styles.modal_content} onClick={(e)=>e.stopPropagation()} >
                 <form onSubmit={handleSubmit}>
                     <div className={styles.form_container}>

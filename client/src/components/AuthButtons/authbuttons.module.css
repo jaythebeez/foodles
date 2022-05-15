@@ -1,20 +1,23 @@
-
 .auth_button{
-    padding:8px 20px;
+    padding:10px 20px;
     font-size:.9rem;
     font-weight:400;
-    background-image:linear-gradient(to right,rgb(83, 126, 155), rgb(41, 104, 129));
-    border-radius: 30px;
-    border: none;
+    background:white;
+    border-radius: 5px;
+    border: .5px solid rgb(41, 104, 129);
     cursor:pointer;
-    color:white;
+    color:rgb(41, 104, 129);
     transition:.3s;
+}
+.filled {
+    color: white;
+    background: rgb(41, 104, 129);
+}
+.auth_button:hover{
+    /* transform:scale(1.05); */
     box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%),
     0 3px 1px -2px rgb(0 0 0 / 12%),
     0 1px 5px 0 #00000033;
-}
-.auth_button:hover{
-    transform:scale(1.05);
 }
 .auth_button:active{
     transform:scale(.95);

@@ -13,9 +13,9 @@ const Navbar = ({handleAuthModal, authModal}) => {
      
     const toggleNavigation = () => setNavOpen(navOpen => !navOpen);
 
-    useEffect(()=>{
-        if(authModal.login || authModal.signUp) setNavOpen(false);
-    }, [authModal])
+    // useEffect(()=>{
+    //     if(authModal.login || authModal.signUp) setNavOpen(false);
+    // }, [authModal])
 
 
     return ( 

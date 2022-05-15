@@ -26,7 +26,7 @@ const SearchForm = () => {
             <div className={styles.search_form}>
                 <input type="search" placeholder='Search your favorite recipes...' className={styles.search_bar} value={query} onChange={handleChange} required/>
                 <div className={styles.btn_container}>
-                    <input type='submit' className={styles.search_btn} value='Search Recipes' />
+                    <button className={styles.search_btn}>Search Recipes</button>
                     <button className={[styles.search_btn, styles.extra_btn].join(' ')}>Random Search</button>
                 </div>
             </div>

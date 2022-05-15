@@ -9,10 +9,8 @@ import { toast } from "react-toastify";
 import { onSnapshot, where, query } from 'firebase/firestore';
 import { colRef } from '../../contexts/firebase/store';
 import { UserContext } from "../../contexts/UserContext";
-import LogIn from "../../components/AuthModals/Login";
-import SignUp from "../../components/AuthModals/Signup";
 
-const SearchResultsPage = ({handleAuthModal, authModal}) => {
+const SearchResultsPage = () => {
     const apiKey = process.env.REACT_APP_SPOONACULAR_API;
     const api = `apiKey=${apiKey}`;
     const { query: routerQuery } = useParams();// get query from url
@@ -127,8 +125,6 @@ const SearchResultsPage = ({handleAuthModal, authModal}) => {
             )}
 
             {modal.isOpen && <Modal closeModal={closeModal} id={modal.id} userData={userData}/>}
-            {authModal.login && <LogIn handleAuthModal={handleAuthModal} />}
-            {authModal.signUp && <SignUp handleAuthModal={handleAuthModal} />}
         </>
     );
 }

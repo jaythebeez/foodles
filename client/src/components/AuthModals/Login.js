@@ -3,8 +3,9 @@ import { login } from "../../contexts/firebase/auth";
 import { UserContext } from "../../contexts/UserContext";
 import styles from './authpage.module.css';
 import {  toast  } from 'react-toastify';
+import { openModal } from "./AuthContainer";
 
-const LogIn = ({handleAuthModal}) => {
+const LogIn = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('')
@@ -13,7 +14,7 @@ const LogIn = ({handleAuthModal}) => {
 
     useEffect(()=>{
         //if the user is already logged in return to the previous page
-        if(user.isAuthenticated) handleAuthModal('close');
+        if(user.isAuthenticated) openModal('closed');
     } ,[user])
 
     const handleSubmit = async (e) => {
@@ -26,7 +27,7 @@ const LogIn = ({handleAuthModal}) => {
         }
     }
     return ( 
-        <div className={styles.modal_container} onClick={()=>handleAuthModal('close')}>
+        <div className={styles.modal_container} onClick={()=>openModal('closed')}>
             <div className={styles.modal_content} onClick={(e)=>e.stopPropagation()} >
                 <form onSubmit={handleSubmit}>
                     <div className={styles.form_container}>

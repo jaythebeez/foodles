@@ -24,15 +24,15 @@
     padding:5px 10px;
     background: none;
     outline: none;
-    border:0.5px solid var(--watermelon);
+    border:0.5px solid rgb(41, 104, 129);
     border-radius: 4px;
     cursor:pointer;
-    color:var(--watermelon);
+    color:rgb(41, 104, 129);
     transition: .3s;
     font-size:.9rem;
 }
 .btn_container button:hover{
-    background:var(--watermelon);
+    background:rgb(41, 104, 129);
     color:white;
 }
 .btn_container button:active{

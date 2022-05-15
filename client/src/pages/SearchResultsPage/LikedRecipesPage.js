@@ -1,5 +1,4 @@
 import { useEffect, useLayoutEffect, useState, useContext } from "react";
-import useFetch from "../../customHooks/useFetch";
 import RecipeCard from "../../components/RecipeCard";
 import styles from './searchresultspage.module.css';
 import Modal from "../../components/Modal/Modal";
@@ -9,6 +8,7 @@ import { onSnapshot, where, query } from 'firebase/firestore';
 import { colRef } from '../../contexts/firebase/store';
 import { UserContext } from "../../contexts/UserContext";
 import {  useNavigate  } from 'react-router-dom'
+import useFetch from "../../customHooks/useFetch";
 
 
 const LikedResultsPage = () => {
@@ -40,10 +40,10 @@ const LikedResultsPage = () => {
         error && toast('Error: ' + error)
     },[error])
 
-    useEffect(() => {
+    const handleData = async () => {
         //if user is authenticated pass user data to all recipe cards 
         if(user.isAuthenticated){
-            const q = query(colRef, where('uid', '==', user.data.uid))
+            const q = query(colRef, where('uid', '==', user.data.uid));
             onSnapshot(q, (snapshot)=>{
                 let likes = [];
     
@@ -63,6 +63,10 @@ const LikedResultsPage = () => {
             navigate('/');
             
         }
+    }
+
+    useEffect(() => {
+        handleData();
     },[user])
 
 

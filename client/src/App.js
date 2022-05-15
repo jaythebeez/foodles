@@ -4,6 +4,7 @@ import Search from './pages/Search';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UserContextProvider from './contexts/UserContext';
+import AuthContainer from './components/AuthModals/AuthContainer';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/search/*" element={<Search />} />
           </Routes>
           <ToastContainer position="top-right"/>
+          <AuthContainer />
         </div>
       </Router>
     </UserContextProvider>
